@@ -11,13 +11,14 @@ async function request(path, options = {}) {
   return data;
 }
 
+const detect=observation=>request("/cyclone/detect",{method:"POST",body:JSON.stringify(observation)});
 export const api={
   health:()=>request("/health"), dashboard:(id)=>request(`/dashboard${id?`?cyclone_id=${encodeURIComponent(id)}`:""}`),
   cyclones:()=>request("/cyclones"), detail:id=>request(`/cyclones/${encodeURIComponent(id)}`),
   images:id=>request(`/cyclones/${encodeURIComponent(id)}/images`), track:id=>request(`/cyclones/${encodeURIComponent(id)}/track`),
   prediction:(id,index)=>request(`/cyclones/${encodeURIComponent(id)}/prediction?index=${index}`),
   classify:observation=>request("/classify",{method:"POST",body:JSON.stringify(observation)}),
-  detect:observation=>request("/cyclone/detect",{method:"POST",body:JSON.stringify(observation)}),
+  detect, detection:detect, detectr:detect,
   sources:()=>request("/data/sources"), basemap:()=>request("/map/indian-ocean"),
   imageUrl:path=>`${apiOrigin}${path}`
 };

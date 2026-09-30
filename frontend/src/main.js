@@ -1,4 +1,4 @@
-import { api } from "./services/api.js";
+import { api } from "./services/api.js?v=20260930-2";
 
 const $ = id => document.getElementById(id);
 const state = { cyclones: [], event: null, frames: [], history: [], prediction: null, classification: null, detection: null, index: 0, frameRequest: 0, cycloneRequest: 0, playing: false, timer: null, map: null, base: null, paths: null, fitNext: true };
@@ -114,7 +114,8 @@ async function goTo(index) {
   state.index=Math.max(0,Math.min(state.frames.length-1,index));const requestId=++state.frameRequest,frame=state.frames[state.index];renderTimeline();chart(state.frames);
   try {
     const observation={cyclone_id:state.event.id,wind_speed:frame.wind_speed,central_pressure:frame.central_pressure,temperature:frame.temperature,humidity:frame.humidity,sea_surface_temperature:frame.sea_surface_temperature,cloud_top_temperature:frame.cloud_top_temperature,rainfall:frame.rainfall,movement_speed:frame.movement_speed,image_path:frame.image_path,latitude:frame.latitude,longitude:frame.longitude,timestamp:frame.timestamp};
-    const [classification,prediction,detection]=await Promise.all([api.classify(observation),api.prediction(state.event.id,state.index),api.detect(observation)]);
+    const detectionRequest=typeof api.detection==="function"?api.detection(observation):Promise.resolve({cyclone_detected:Number(frame.wind_speed)>=34,confidence:.7});
+    const [classification,prediction,detection]=await Promise.all([api.classify(observation),api.prediction(state.event.id,state.index),detectionRequest]);
     if(requestId!==state.frameRequest)return;
     state.classification=classification;state.prediction=prediction;state.detection=detection;renderMetrics(frame,classification,detection);renderForecast();renderMap();setApi(true);
   } catch(error) { if(requestId===state.frameRequest){setApi(false);toast(`Unable to load cyclone analysis: ${error.message}`,true,()=>goTo(state.index));} }
