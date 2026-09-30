@@ -107,7 +107,7 @@ function renderTimeline() {
   $("timeline").value=state.index;$("timeline").max=state.frames.length-1;
   $("timelineLabels").innerHTML=state.frames.map((f,i)=>`<button class="tick ${i===state.index?"selected":""}" data-index="${i}" aria-label="Observation at T plus ${f.offset_hours} hours">T+${String(f.offset_hours).padStart(2,"0")}</button>`).join("");
   $("timelineLabels").querySelectorAll("button").forEach(button=>button.addEventListener("click",()=>goTo(Number(button.dataset.index))));
-  const image=$("satelliteImage"),loader=$("imageLoading");loader.classList.remove("hidden");loader.textContent="Loading satellite frame…";image.onload=()=>loader.classList.add("hidden");image.onerror=()=>{loader.textContent="Unable to load satellite frame";};image.src=api.imageUrl(frame.image_url);
+  const image=$("satelliteImage"),loader=$("imageLoading");loader.classList.remove("hidden");loader.textContent="Loading satellite frame…";image.onload=()=>loader.classList.add("hidden");image.onerror=()=>{loader.textContent="Unable to load satellite frame";};image.src=`${api.imageUrl(frame.image_url)}?v=20260930-3`;
 }
 async function goTo(index) {
   if(!state.event||!state.frames.length)return;

@@ -14,11 +14,11 @@ IMAGES = DATA / "cyclone_images"
 SIZE = 420
 
 EVENTS = [
-    {"id":"CYCLONE-001","name":"Synthetic Cyclone 001","basin":"Bay of Bengal","region":"Odisha coast","start":"2026-09-28T00:00:00Z","lat":13.0,"lon":88.0,"dlat":0.46,"dlon":-0.18,"wind":58,"wind_gain":6.8,"pressure":1000,"sst":29.1,"temp":27.6,"humidity":76,"rain":18,"direction":"NNW","movement":18.4},
-    {"id":"CYCLONE-002","name":"Synthetic Cyclone 002","basin":"Arabian Sea","region":"Gujarat coast","start":"2026-09-28T00:00:00Z","lat":17.4,"lon":70.5,"dlat":0.18,"dlon":-0.47,"wind":104,"wind_gain":4.6,"pressure":982,"sst":28.4,"temp":26.9,"humidity":83,"rain":32,"direction":"WNW","movement":22.1},
-    {"id":"CYCLONE-003","name":"Synthetic Cyclone 003","basin":"Bay of Bengal","region":"Andhra Pradesh coast","start":"2026-09-28T00:00:00Z","lat":12.2,"lon":85.6,"dlat":0.34,"dlon":-0.11,"wind":142,"wind_gain":1.8,"pressure":955,"sst":29.4,"temp":27.1,"humidity":89,"rain":54,"direction":"NNW","movement":14.7},
-    {"id":"CYCLONE-004","name":"Synthetic Cyclone 004","basin":"Arabian Sea","region":"Gujarat coast","start":"2026-09-28T00:00:00Z","lat":20.1,"lon":68.0,"dlat":0.20,"dlon":-0.30,"wind":78,"wind_gain":3.2,"pressure":991,"sst":28.7,"temp":27.3,"humidity":81,"rain":25,"direction":"WNW","movement":16.3},
-    {"id":"CYCLONE-005","name":"Synthetic Cyclone 005","basin":"South Bay of Bengal","region":"Tamil Nadu coast","start":"2026-09-28T00:00:00Z","lat":9.4,"lon":84.8,"dlat":0.16,"dlon":-0.39,"wind":46,"wind_gain":5.1,"pressure":1005,"sst":29.7,"temp":28.0,"humidity":73,"rain":14,"direction":"WNW","movement":20.6},
+    {"id":"CYCLONE-001","name":"Demo Cyclone 001","basin":"Bay of Bengal","region":"Odisha coast","start":"2026-09-28T00:00:00Z","lat":13.0,"lon":88.0,"dlat":0.46,"dlon":-0.18,"wind":58,"wind_gain":6.8,"pressure":1000,"sst":29.1,"temp":27.6,"humidity":76,"rain":18,"direction":"NNW","movement":18.4},
+    {"id":"CYCLONE-002","name":"Demo Cyclone 002","basin":"Arabian Sea","region":"Gujarat coast","start":"2026-09-28T00:00:00Z","lat":17.4,"lon":70.5,"dlat":0.18,"dlon":-0.47,"wind":104,"wind_gain":4.6,"pressure":982,"sst":28.4,"temp":26.9,"humidity":83,"rain":32,"direction":"WNW","movement":22.1},
+    {"id":"CYCLONE-003","name":"Demo Cyclone 003","basin":"Bay of Bengal","region":"Andhra Pradesh coast","start":"2026-09-28T00:00:00Z","lat":12.2,"lon":85.6,"dlat":0.34,"dlon":-0.11,"wind":142,"wind_gain":1.8,"pressure":955,"sst":29.4,"temp":27.1,"humidity":89,"rain":54,"direction":"NNW","movement":14.7},
+    {"id":"CYCLONE-004","name":"Demo Cyclone 004","basin":"Arabian Sea","region":"Gujarat coast","start":"2026-09-28T00:00:00Z","lat":20.1,"lon":68.0,"dlat":0.20,"dlon":-0.30,"wind":78,"wind_gain":3.2,"pressure":991,"sst":28.7,"temp":27.3,"humidity":81,"rain":25,"direction":"WNW","movement":16.3},
+    {"id":"CYCLONE-005","name":"Demo Cyclone 005","basin":"South Bay of Bengal","region":"Tamil Nadu coast","start":"2026-09-28T00:00:00Z","lat":9.4,"lon":84.8,"dlat":0.16,"dlon":-0.39,"wind":46,"wind_gain":5.1,"pressure":1005,"sst":29.7,"temp":28.0,"humidity":73,"rain":14,"direction":"WNW","movement":20.6},
 ]
 
 
@@ -59,7 +59,7 @@ def make_satellite(path, seed, strength, frame, motion=(.3,-.2)):
     image = image.filter(ImageFilter.GaussianBlur(.45))
     draw = ImageDraw.Draw(image, "RGBA")
     draw.ellipse((cx-4, cy-4, cx+4, cy+4), fill=(3, 13, 23, 220), outline=(192, 229, 236, 160), width=2)
-    draw.text((13, 12), "SYNTHETIC IR  /  DEMO", fill=(190, 215, 220, 210))
+    draw.text((13, 12), "DEMO SATELLITE  /  IR", fill=(190, 215, 220, 210))
     draw.text((13, SIZE-25), f"T+{frame*6:02d}H   6.0 UM", fill=(153, 184, 195, 210))
     image.save(path, optimize=True)
 
@@ -92,7 +92,7 @@ def main():
             forecasts.append({"hours":hours,"timestamp":(datetime.fromisoformat(last["timestamp"].replace("Z","+00:00"))+timedelta(hours=hours)).isoformat().replace("+00:00","Z"),"latitude":round(lat,3),"longitude":round(lon,3),"wind_speed":fw,"central_pressure":round(last["central_pressure"]-event["wind_gain"]*min(t,4)*1.03,1),"intensity_class":intensity(fw),"confidence":round(max(.55,.94-hours*.0068),2)})
         tracks[event["id"]]=hist
         predictions[event["id"]]={"current_position":{"latitude":last["latitude"],"longitude":last["longitude"]},"predicted_path":forecasts}
-        event_records.append({"id":event["id"],"name":event["name"],"basin":event["basin"],"region":event["region"],"data_label":"DEMO / SYNTHETIC DATA","observation_count":len(observations),"observations":observations})
+        event_records.append({"id":event["id"],"name":event["name"],"basin":event["basin"],"region":event["region"],"data_label":"DEMO / SIMULATION DATA","observation_count":len(observations),"observations":observations})
     with (DATA/"cyclone_dataset.csv").open("w",newline="",encoding="utf-8") as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     for name,value in (("cyclone_events.json",event_records),("cyclone_tracks.json",tracks),("cyclone_predictions.json",predictions)):

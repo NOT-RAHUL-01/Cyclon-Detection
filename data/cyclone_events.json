@@ -1,10 +1,10 @@
 [
   {
     "id": "CYCLONE-001",
-    "name": "Synthetic Cyclone 001",
+    "name": "Demo Cyclone 001",
     "basin": "Bay of Bengal",
     "region": "Odisha coast",
-    "data_label": "DEMO / SYNTHETIC DATA",
+    "data_label": "DEMO / SIMULATION DATA",
     "observation_count": 8,
     "observations": [
       {
@@ -147,10 +147,10 @@
   },
   {
     "id": "CYCLONE-002",
-    "name": "Synthetic Cyclone 002",
+    "name": "Demo Cyclone 002",
     "basin": "Arabian Sea",
     "region": "Gujarat coast",
-    "data_label": "DEMO / SYNTHETIC DATA",
+    "data_label": "DEMO / SIMULATION DATA",
     "observation_count": 8,
     "observations": [
       {
@@ -293,10 +293,10 @@
   },
   {
     "id": "CYCLONE-003",
-    "name": "Synthetic Cyclone 003",
+    "name": "Demo Cyclone 003",
     "basin": "Bay of Bengal",
     "region": "Andhra Pradesh coast",
-    "data_label": "DEMO / SYNTHETIC DATA",
+    "data_label": "DEMO / SIMULATION DATA",
     "observation_count": 8,
     "observations": [
       {
@@ -439,10 +439,10 @@
   },
   {
     "id": "CYCLONE-004",
-    "name": "Synthetic Cyclone 004",
+    "name": "Demo Cyclone 004",
     "basin": "Arabian Sea",
     "region": "Gujarat coast",
-    "data_label": "DEMO / SYNTHETIC DATA",
+    "data_label": "DEMO / SIMULATION DATA",
     "observation_count": 8,
     "observations": [
       {
@@ -585,10 +585,10 @@
   },
   {
     "id": "CYCLONE-005",
-    "name": "Synthetic Cyclone 005",
+    "name": "Demo Cyclone 005",
     "basin": "South Bay of Bengal",
     "region": "Tamil Nadu coast",
-    "data_label": "DEMO / SYNTHETIC DATA",
+    "data_label": "DEMO / SIMULATION DATA",
     "observation_count": 8,
     "observations": [
       {
