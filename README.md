@@ -47,9 +47,9 @@ The browser smoke check covers the cyclone selector, locally served PNGs, timeli
 | GET | `/api/cyclones/{id}/images` | Eight timestamped images and observation values |
 | GET | `/api/images/{filename}` | Actual generated PNG file |
 | GET | `/api/cyclones/{id}/track` | Historical observations |
-| GET | `/api/cyclones/{id}/prediction?index=0` | Forecast for a selected timeline observation |
+| GET | `/api/cyclones/{id}/prediction?index=0` | Forecast plus derived closest-approach and risk summary |
 | POST | `/api/classify` | Synthetic image/weather classification |
-| GET | `/api/data/sources` | Explicitly synthetic source statuses |
+| GET | `/api/data/sources` | Source coverage, explicitly labeled simulated or local |
 | GET | `/api/map/indian-ocean` | Offline local GeoJSON basemap |
 
 Example classification body:
@@ -58,10 +58,10 @@ Example classification body:
 {"wind_speed":150,"central_pressure":950,"image_path":"data/cyclone_images/cyclone_003_t24.png"}
 ```
 
-The response returns `class`, `confidence`, `confidence_label`, wind, pressure, image-derived cloud-field coverage and the demo model name. Invalid requests return HTTP 400 JSON errors; unknown event/image paths return 404.
+The response returns `class`, `confidence`, `confidence_label`, wind, pressure, image-derived cloud-field coverage and the model name. The prediction endpoint adds an `impact` object containing the nearest-coast estimate, wind/rain/coastal risk scores, alert level and a non-operational warning label. Invalid requests return HTTP 400 JSON errors; unknown event/image paths return 404.
 
 ## Production replacement points and limitations
 
 Replace the procedural imagery and generated records with licensed satellite observations and quality-controlled meteorological feeds. Replace the deterministic classifier with an evaluated CNN/EfficientNet/ResNet/ViT implementation, and replace trajectory extrapolation with a validated sequence/trajectory model. The stable JSON APIs let the frontend remain unchanged.
 
-The intensity classifier and motion fit are trained from generated synthetic records; they are not validated or calibrated against real observations. The offline basemap is an illustrative simplified regional outline, not a detailed navigational chart. Forecast tracks and closest-approach markers are demonstrations only.
+The intensity classifier and motion fit are trained from generated records; they are not validated or calibrated against real observations. The offline basemap is an illustrative regional outline, not a detailed navigational chart. Forecast tracks, uncertainty corridor and closest-approach estimates are for simulation only. The browser uses plain JavaScript modules and vendored Leaflet; there is no `package.json` or React build step.

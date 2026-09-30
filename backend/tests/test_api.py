@@ -57,6 +57,9 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(len(self.call(base+"/track")[1]["historical_track"]),8)
         forecast=self.call(base+"/prediction?index=0")[1]["predicted_path"]
         self.assertEqual([p["hours"] for p in forecast],[6,12,24,48])
+        prediction=self.call(base+"/prediction?index=0")[1]
+        self.assertEqual(prediction["impact"]["region"],"Andhra Pradesh coast")
+        self.assertIn(prediction["impact"]["alert_level"],["ELEVATED","WATCH","WARNING"])
         self.assertIn("features",self.call("/api/map/indian-ocean")[1])
     def test_generated_dataset_rows_and_images(self):
         with (ROOT/"data"/"cyclone_dataset.csv").open(encoding="utf-8",newline="") as f:rows=list(csv.DictReader(f))

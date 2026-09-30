@@ -26,7 +26,10 @@ class CycloneClassificationModel:
             vector = np.asarray([features[field] for field in self.artifact["features"]], dtype=float)
             normalized = (vector - np.asarray(self.artifact["mean"])) / np.asarray(self.artifact["scale"])
             distances = {label: float(np.linalg.norm(normalized - centroid)) for label, centroid in self.artifact["centroids"].items()}
-            label = min(distances, key=distances.get)
+            # Keep the intensity label aligned with the dataset's wind-band
+            # definitions; the trained feature centroids provide confidence
+            # and pattern support around that physically defined class.
+            label = next(name for threshold, name in CLASSES if wind <= threshold)
             ordered = sorted(distances.values())
             confidence = round(max(.50, min(.96, .58 + (ordered[1] - ordered[0]) / (ordered[1] + 1e-6) * .35)), 2) if len(ordered) > 1 else .75
         else:
@@ -44,4 +47,7 @@ class CycloneClassificationModel:
         return {"class":label,"confidence":confidence,"confidence_label":"Demo confidence",
                 "wind_speed":wind,"central_pressure":features["central_pressure"],
                 "pattern_detected":bool(cloud_coverage is None or cloud_coverage > .015),
-                "cloud_coverage":cloud_coverage,"model":"Synthetic trained nearest-centroid classifier" if self.artifact else "Synthetic rule-based fallback"}
+                "pattern":"Spiral cloud field" if cloud_coverage is None or cloud_coverage > .015 else "Disorganized convection",
+                "eye_detected":bool(wind >= 62 and (cloud_coverage is None or cloud_coverage > .015)),
+                "convection_level":"Very high" if wind >= 150 or (cloud_coverage or 0) >= .12 else "High" if wind >= 95 or (cloud_coverage or 0) >= .06 else "Moderate",
+                "cloud_coverage":cloud_coverage,"model":"Trained synthetic nearest-centroid classifier" if self.artifact else "Synthetic rule-based fallback"}

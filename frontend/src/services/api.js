@@ -17,6 +17,7 @@ export const api={
   images:id=>request(`/cyclones/${encodeURIComponent(id)}/images`), track:id=>request(`/cyclones/${encodeURIComponent(id)}/track`),
   prediction:(id,index)=>request(`/cyclones/${encodeURIComponent(id)}/prediction?index=${index}`),
   classify:observation=>request("/classify",{method:"POST",body:JSON.stringify(observation)}),
+  detect:observation=>request("/cyclone/detect",{method:"POST",body:JSON.stringify(observation)}),
   sources:()=>request("/data/sources"), basemap:()=>request("/map/indian-ocean"),
   imageUrl:path=>`${apiOrigin}${path}`
 };

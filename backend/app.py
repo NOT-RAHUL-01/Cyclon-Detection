@@ -1,6 +1,7 @@
 """Offline JSON and PNG API backed by the generated synthetic cyclone dataset."""
 import csv
 import json
+import math
 import mimetypes
 import re
 from datetime import datetime, timedelta, timezone
@@ -17,7 +18,7 @@ DATA=ROOT/"data"
 EVENTS=json.loads((DATA/"cyclone_events.json").read_text(encoding="utf-8"))
 TRACKS=json.loads((DATA/"cyclone_tracks.json").read_text(encoding="utf-8"))
 PREDICTIONS=json.loads((DATA/"cyclone_predictions.json").read_text(encoding="utf-8"))
-SOURCES={"sources":[{"name":"INSAT","status":"DEMO","data_available":True},{"name":"NOAA","status":"DEMO","data_available":True},{"name":"NASA","status":"DEMO","data_available":True},{"name":"Meteorological","status":"DEMO","data_available":True},{"name":"Synthetic history","status":"DEMO","data_available":True}]}
+SOURCES={"sources":[{"name":"Satellite imagery","status":"SIMULATED","data_available":True},{"name":"Meteorological observations","status":"SIMULATED","data_available":True},{"name":"Sea surface temperature","status":"SIMULATED","data_available":True},{"name":"Atmospheric parameters","status":"SIMULATED","data_available":True},{"name":"Historical cyclone tracks","status":"SIMULATED","data_available":True},{"name":"GIS coastline and terrain","status":"LOCAL ILLUSTRATION","data_available":True}]}
 CLASSIFIER=CycloneClassificationModel(); TRACK_MODEL=CycloneTrackPredictionModel(); DETECTOR=CycloneDetectionModel()
 
 
@@ -41,6 +42,31 @@ def prediction_for(event,index):
     for point in result["predicted_path"]:
         forecasts.append({**point,"central_pressure":round(current["central_pressure"]-max(0,point["wind_speed"]-current["wind_speed"])*1.3,1)})
     return {"current_position":result["current_position"],"predicted_path":forecasts}
+
+
+def impact_for(event,index,prediction=None):
+    """Derive indicative risk values from one selected observation and its forecast."""
+    index=max(0,min(len(event["observations"])-1,index))
+    observation=event["observations"][index]
+    prediction=prediction or prediction_for(event,index)
+    coast_options={"Odisha coast":("Odisha coast",20.2,86.5),"Andhra Pradesh coast":("Andhra Pradesh coast",16.5,82.5),
+                   "Gujarat coast":("Gujarat coast",22.5,69.0),"Tamil Nadu coast":("Tamil Nadu coast",11.5,80.3)}
+    region,coast_lat,coast_lon=coast_options.get(event["region"],("Indian coastline",20.0,88.0))
+    def distance(lat,lon):
+        lat1,lat2=math.radians(lat),math.radians(coast_lat)
+        dlat=lat2-lat1;dlon=math.radians(coast_lon-lon)
+        value=math.sin(dlat/2)**2+math.cos(lat1)*math.cos(lat2)*math.sin(dlon/2)**2
+        return 6371*2*math.atan2(math.sqrt(value),math.sqrt(max(0,1-value)))
+    points=prediction.get("predicted_path",[])
+    nearest=min(points,key=lambda p:distance(p["latitude"],p["longitude"])) if points else observation
+    nearest_distance=round(distance(nearest["latitude"],nearest["longitude"]))
+    wind=float(observation["wind_speed"]);rain=float(observation["rainfall"])
+    wind_risk=min(100,round(wind/180*100));rain_risk=min(100,round(rain/80*100));coast_risk=max(0,min(100,round((1-nearest_distance/700)*100)))
+    alert="WARNING" if wind>=118 or rain>=60 else "WATCH" if wind>=62 or rain>=30 else "ELEVATED"
+    return {"region":region,"distance_km":nearest_distance,"closest_approach_hours":nearest.get("hours"),
+            "closest_approach_time":nearest.get("timestamp"),"wind_risk":wind_risk,"rainfall_risk":rain_risk,
+            "coastal_risk":coast_risk,"alert_level":alert,"reason":f"Derived from {wind:g} km/h wind, {rain:g} mm/h rainfall and forecast distance to the {region}.",
+            "label":"Indicative simulation estimate; not a public warning."}
 
 
 def validate_classification(payload):
@@ -115,6 +141,7 @@ class Handler(BaseHTTPRequestHandler):
             except ValueError: return self.send_json(400,{"error":"index must be an integer"})
             result=prediction_for(event,index)
             result["cyclone_id"]=event["id"]; result["forecast_label"]="Synthetic forecast"
+            result["impact"]=impact_for(event,index,result)
             return self.send_json(200,result)
         match=re.fullmatch(r"/api/cyclones/([^/]+)",path)
         if match:
