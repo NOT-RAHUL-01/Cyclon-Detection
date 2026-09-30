@@ -191,6 +191,11 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self,fmt,*args): print("%s - %s"%(self.address_string(),fmt%args))
 
 
-if __name__=="__main__":
-    print("Cyclone offline demo API listening on http://127.0.0.1:8000")
-    ThreadingHTTPServer(("127.0.0.1",8000),Handler).serve_forever()
+if __name__ == "__main__":
+    import os
+
+    port = int(os.environ.get("PORT", 8000))
+
+    print(f"Cyclone API listening on port {port}")
+
+    ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()
