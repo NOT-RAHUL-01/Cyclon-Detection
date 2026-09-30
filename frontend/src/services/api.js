@@ -1,5 +1,6 @@
 // One API base for all calls; set window.CYCLONE_API_BASE before main.js if deployed elsewhere.
-export const API_BASE = window.CYCLONE_API_BASE || `${location.protocol}//${location.hostname}:8000/api`;
+export const API_BASE = "https://cyclon-backend.onrender.com/api";
+export const apiOrigin = "https://cyclon-backend.onrender.com";
 export const apiOrigin = API_BASE.replace(/\/api\/?$/, "");
 
 async function request(path, options = {}) {
