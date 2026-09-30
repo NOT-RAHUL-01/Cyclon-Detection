@@ -25,6 +25,14 @@ async function request(path, options = {}) {
   return data;
 }
 
+async function localGeoJSON(path) {
+  const response = await fetch(new URL(path, import.meta.url));
+  if (!response.ok) {
+    throw new Error(`Map data request failed (${response.status})`);
+  }
+  return response.json();
+}
+
 const detect = (observation) =>
   request("/cyclone/detect", {
     method: "POST",
@@ -69,7 +77,11 @@ export const api = {
 
   sources: () => request("/data/sources"),
 
-  basemap: () => request("/map/indian-ocean"),
+  basemap: () => localGeoJSON("../../data/maps/natural-earth-50m-countries-no-india.geojson"),
+
+  indiaBoundary: () => localGeoJSON("../../data/maps/india-soi.geojson"),
+
+  indiaStates: () => localGeoJSON("../../data/maps/india-state-ut-soi.geojson"),
 
   imageUrl: (path) => `${apiOrigin}${path}`,
 };

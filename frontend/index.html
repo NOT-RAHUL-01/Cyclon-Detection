@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101719"><title>Dravit</title>
-  <link rel="stylesheet" href="./vendor/leaflet/leaflet.css"><link rel="stylesheet" href="./styles.css">
+  <meta name="theme-color" content="#101719"><title>Dravik</title>
+  <link rel="stylesheet" href="./vendor/leaflet/leaflet.css"><link rel="stylesheet" href="./styles.css?v=20260930-2">
   <script defer src="./vendor/leaflet/leaflet.js"></script>
 </head>
 <body>
 <main class="command-center">
   <header class="topbar">
-    <div class="identity"><div><h1>Dravit</h1><p>AI/ML based tropical cyclone identification, classification &amp; track prediction</p></div></div>
+    <div class="identity"><div><h1>Dravik</h1><p>AI/ML based tropical cyclone identification, classification &amp; track prediction</p></div></div>
     <div class="top-status"><div class="system-state"><i class="online-dot" id="systemDot"></i><span id="apiState">Connecting</span></div><span class="mode-pill">Simulation mode</span><div class="updated">Last updated <b id="clock">—</b></div></div>
   </header>
 
@@ -48,17 +48,17 @@
   </section>
 
   <section class="analysis-grid">
-    <article class="panel intensity-panel"><div class="section-head"><div><div class="eyebrow">Wind observations</div><h2>Intensity evolution</h2></div><span class="unit-note">km/h</span></div><svg id="windChart" viewBox="0 0 560 180" role="img" aria-label="Cyclone wind speed over observation time"></svg><div class="chart-foot"><span>Observed at six-hour intervals</span><span id="observationTime">—</span></div></article>
-    <article class="panel forecast-panel"><div class="section-head"><div><div class="eyebrow">AI track prediction</div><h2>Forecast positions</h2></div><span class="forecast-confidence" id="forecastConfidence">Confidence —</span></div><div class="forecast-table-wrap"><table><thead><tr><th>Lead</th><th>Position</th><th>Wind</th><th>Pressure</th><th>Valid time</th></tr></thead><tbody id="forecastRows"><tr><td colspan="5" class="empty-row">Waiting for forecast…</td></tr></tbody></table></div><div class="forecast-foot">Track points and map corridor use the same forecast response.</div></article>
+    <article class="panel intensity-panel"><div class="section-head"><div><h2>Intensity evolution</h2></div><span class="unit-note">km/h</span></div><svg id="windChart" viewBox="0 0 560 180" role="img" aria-label="Cyclone wind speed over observation time"></svg><div class="chart-foot"><span>Observed at six-hour intervals</span><span id="observationTime">—</span></div></article>
+    <article class="panel forecast-panel"><div class="section-head"><div><h2>Forecast positions</h2></div><span class="forecast-confidence" id="forecastConfidence">Confidence —</span></div><div class="forecast-table-wrap"><table><thead><tr><th>Lead</th><th>Position</th><th>Wind</th><th>Pressure</th><th>Valid time</th></tr></thead><tbody id="forecastRows"><tr><td colspan="5" class="empty-row">Waiting for forecast…</td></tr></tbody></table></div><div class="forecast-foot">Track points and map corridor use the same forecast response.</div></article>
   </section>
 
-  <section class="timeline-panel panel"><div class="section-head"><div><div class="eyebrow">Temporal analysis</div><h2>Satellite time-lapse</h2></div><div class="timeline-tools"><span id="timelineTime">T+00</span><button class="control" id="previous" title="Previous observation" aria-label="Previous observation">‹</button><button class="control play-control" id="play" title="Play time-lapse" aria-label="Play time-lapse">▶</button><button class="control" id="next" title="Next observation" aria-label="Next observation">›</button></div></div><input id="timeline" type="range" min="0" max="7" value="0" aria-label="Select satellite observation time"><div class="timeline-labels" id="timelineLabels"></div><div class="timeline-caption"><span id="timelineDate">—</span><span id="timelineIndex">—</span></div></section>
+  <section class="timeline-panel panel"><div class="section-head"><div><h2>Satellite time-lapse</h2></div><div class="timeline-tools"><span id="timelineTime">T+00</span><button class="control" id="previous" title="Previous observation" aria-label="Previous observation">‹</button><button class="control play-control" id="play" title="Play time-lapse" aria-label="Play time-lapse">▶</button><button class="control" id="next" title="Next observation" aria-label="Next observation">›</button></div></div><input id="timeline" type="range" min="0" max="7" value="0" aria-label="Select satellite observation time"><div class="timeline-labels" id="timelineLabels"></div><div class="timeline-caption"><span id="timelineDate">—</span><span id="timelineIndex">—</span></div></section>
 
   <section class="bottom-grid">
-    <article class="panel impact-panel"><div class="section-head"><div><div class="eyebrow">Decision support <span class="sep">/</span> Indicative only</div><h2>Impact assessment</h2></div><span class="risk-pill" id="alertLevel">—</span></div><div class="impact-region"><span>Nearest coastal region</span><b id="impactRegion">—</b><small id="impactDistance">—</small></div><div class="risk-list"><div><span>Wind risk</span><div class="risk-bar"><i id="windRiskBar"></i></div><b id="windRiskLabel">—</b></div><div><span>Rainfall risk</span><div class="risk-bar"><i id="rainRiskBar"></i></div><b id="rainRiskLabel">—</b></div><div><span>Coastal proximity</span><div class="risk-bar"><i id="coastRiskBar"></i></div><b id="coastRiskLabel">—</b></div></div><p class="impact-note" id="impactReason">Impact estimates update from the selected observation and forecast.</p></article>
-    <article class="panel sources-panel"><div class="section-head"><div><div class="eyebrow">Input coverage</div><h2>Data sources</h2></div><span class="model-tag">Simulation data</span></div><div class="source-list" id="sourceList"><div class="empty-row">Loading source status…</div></div></article>
+    <article class="panel impact-panel"><div class="section-head"><div><h2>Impact assessment</h2></div><span class="risk-pill" id="alertLevel">—</span></div><div class="impact-region"><span>Nearest coastal region</span><b id="impactRegion">—</b><small id="impactDistance">—</small></div><div class="risk-list"><div><span>Wind risk</span><div class="risk-bar"><i id="windRiskBar"></i></div><b id="windRiskLabel">—</b></div><div><span>Rainfall risk</span><div class="risk-bar"><i id="rainRiskBar"></i></div><b id="rainRiskLabel">—</b></div><div><span>Coastal proximity</span><div class="risk-bar"><i id="coastRiskBar"></i></div><b id="coastRiskLabel">—</b></div></div><p class="impact-note" id="impactReason">Impact estimates update from the selected observation and forecast.</p></article>
+    <article class="panel sources-panel"><div class="section-head"><div><h2>Data sources</h2></div><span class="model-tag">Simulation data</span></div><div class="source-list" id="sourceList"><div class="empty-row">Loading source status…</div></div></article>
   </section>
   <div class="toast" id="toast" role="status"></div>
 </main>
-<script type="module" src="./src/main.js?v=20260930-3"></script>
+<script type="module" src="./src/main.js?v=20260930-7"></script>
 </body></html>

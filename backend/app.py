@@ -15,6 +15,7 @@ from ml.path_prediction import CycloneTrackPredictionModel
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"
+MAPS=ROOT/"frontend"/"data"/"maps"
 EVENTS=json.loads((DATA/"cyclone_events.json").read_text(encoding="utf-8"))
 TRACKS=json.loads((DATA/"cyclone_tracks.json").read_text(encoding="utf-8"))
 PREDICTIONS=json.loads((DATA/"cyclone_predictions.json").read_text(encoding="utf-8"))
@@ -118,7 +119,9 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(200,{"cyclones":[{"id":e["id"],"name":e["name"],"basin":e["basin"],"region":e["region"],"data_label":e["data_label"],"observation_count":len(e["observations"]),"current":e["observations"][-1]} for e in EVENTS]})
         if path=="/api/dashboard": return self.send_json(200,dashboard(query.get("cyclone_id",[None])[0]))
         if path=="/api/data/sources": return self.send_json(200,SOURCES)
-        if path=="/api/map/indian-ocean": return self.send_file(DATA/"maps"/"indian_ocean.geojson")
+        if path=="/api/map/indian-ocean": return self.send_file(MAPS/"natural-earth-50m-countries-no-india.geojson")
+        if path=="/api/map/india-outline": return self.send_file(MAPS/"india-soi.geojson")
+        if path=="/api/map/india-states": return self.send_file(MAPS/"india-state-ut-soi.geojson")
         match=re.fullmatch(r"/api/images/([A-Za-z0-9_-]+\.png)",path)
         if match:
             image=DATA/"cyclone_images"/match.group(1)

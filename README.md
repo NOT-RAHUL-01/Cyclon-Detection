@@ -28,7 +28,10 @@ The browser smoke check covers the cyclone selector, locally served PNGs, timeli
 - `data/cyclone_images/`: 40 generated, 420 × 420 PNG infrared-like cloud sequences.
 - `data/cyclone_dataset.csv`: 40 timestamped observations, with weather, movement and intensity features.
 - `data/cyclone_events.json`, `data/cyclone_tracks.json`, `data/cyclone_predictions.json`: event records, historical tracks and +6/+12/+24/+48 hour predictions.
-- `data/maps/indian_ocean.geojson`: locally served simplified geographic land outlines for the Leaflet GIS map.
+- `frontend/data/maps/india-soi.geojson`: DataMeet's `india-soi` SoI State Map outline, retained as the India outer political boundary (CC BY-SA 2.5 / ODbL).
+- `frontend/data/maps/india-state-ut-soi.geojson`: direct GeoJSON serialization of DataMeet `States/Admin2` at commit `2c0c306`; 36 original WGS84 state/UT features, with Jammu & Kashmir and Ladakh separate. Its 2021 source history records the SoI-map J&K/Ladakh update and a fix for duplicate Ladakh entries (DataMeet dataset policy: CC BY 4.0).
+- `frontend/data/maps/natural-earth-50m-countries-no-india.geojson`: Natural Earth v5.1.2 1:50m country polygons with the India feature excluded; used only for surrounding land and neighboring-country geography (public domain).
+- The SoI-derived outer file has one `MultiPolygon` feature with source attribution but no disputed-line style metadata. No disputed lines or India/state geometries were manually added or edited. Generic Pakistan/China boundary strokes are omitted so their country geography cannot override the SoI India outline.
 - `scripts/generate_dummy_data.py`: deterministic procedural image and data generator.
 - `ml/preprocessing.py`, `ml/classification_model.py`, `ml/path_prediction.py`: replaceable feature, image/weather classification and smooth track-prediction interfaces.
 - `ml/train.py`: trains a standardized nearest-centroid intensity classifier and a small track-motion regression from the synthetic dataset. Run `python -m ml.train` to regenerate `ml/artifacts/cyclone_classifier.json`.
@@ -50,7 +53,9 @@ The browser smoke check covers the cyclone selector, locally served PNGs, timeli
 | GET | `/api/cyclones/{id}/prediction?index=0` | Forecast plus derived closest-approach and risk summary |
 | POST | `/api/classify` | Synthetic image/weather classification |
 | GET | `/api/data/sources` | Source coverage, explicitly labeled simulated or local |
-| GET | `/api/map/indian-ocean` | Offline local GeoJSON basemap |
+| GET | `/api/map/indian-ocean` | Natural Earth 1:50m country geography, with India excluded |
+| GET | `/api/map/india-outline` | DataMeet SoI State Map India outer boundary |
+| GET | `/api/map/india-states` | DataMeet state/UT boundaries updated to the SoI map |
 
 Example classification body:
 

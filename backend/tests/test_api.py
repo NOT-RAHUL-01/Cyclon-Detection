@@ -60,7 +60,18 @@ class ApiTests(unittest.TestCase):
         prediction=self.call(base+"/prediction?index=0")[1]
         self.assertEqual(prediction["impact"]["region"],"Andhra Pradesh coast")
         self.assertIn(prediction["impact"]["alert_level"],["ELEVATED","WATCH","WARNING"])
-        self.assertIn("features",self.call("/api/map/indian-ocean")[1])
+        basemap=self.call("/api/map/indian-ocean")[1]
+        self.assertIn("features",basemap)
+        self.assertFalse(any(feature.get("properties",{}).get("ADMIN")=="India" for feature in basemap["features"]))
+
+    def test_india_boundary_sources_keep_jk_and_ladakh_separate(self):
+        outline=self.call("/api/map/india-outline")[1]
+        self.assertEqual(outline["features"][0]["properties"]["Source"],"Survey of India State Map, Datameet")
+        states=self.call("/api/map/india-states")[1]
+        state_names=[feature["properties"]["ST_NM"] for feature in states["features"]]
+        self.assertEqual(len(state_names),36)
+        self.assertIn("Jammu & Kashmir",state_names)
+        self.assertIn("Ladakh",state_names)
     def test_generated_dataset_rows_and_images(self):
         with (ROOT/"data"/"cyclone_dataset.csv").open(encoding="utf-8",newline="") as f:rows=list(csv.DictReader(f))
         self.assertEqual(len(rows),40)
