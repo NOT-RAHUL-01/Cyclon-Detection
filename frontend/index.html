@@ -9,7 +9,7 @@
 <body>
 <main class="command-center">
   <header class="topbar">
-    <div class="identity"><div class="brand-mark">TC</div><div><div class="kicker">SIH 2026 <span>·</span> PS 26070</div><h1>Cyclone Intelligence Center</h1><p>AI/ML based tropical cyclone identification, classification &amp; track prediction</p></div></div>
+    <div class="identity"><div class="brand-mark">TC</div><div><h1>Cyclone Intelligence Center</h1><p>AI/ML based tropical cyclone identification, classification &amp; track prediction</p></div></div>
     <div class="top-status"><div class="system-state"><i class="online-dot" id="systemDot"></i><span id="apiState">Connecting</span></div><span class="mode-pill">Simulation mode</span><div class="updated">Last updated <b id="clock">—</b></div></div>
   </header>
 
@@ -57,9 +57,7 @@
   <section class="bottom-grid">
     <article class="panel impact-panel"><div class="section-head"><div><div class="eyebrow">Decision support <span class="sep">/</span> Indicative only</div><h2>Impact assessment</h2></div><span class="risk-pill" id="alertLevel">—</span></div><div class="impact-region"><span>Nearest coastal region</span><b id="impactRegion">—</b><small id="impactDistance">—</small></div><div class="risk-list"><div><span>Wind risk</span><div class="risk-bar"><i id="windRiskBar"></i></div><b id="windRiskLabel">—</b></div><div><span>Rainfall risk</span><div class="risk-bar"><i id="rainRiskBar"></i></div><b id="rainRiskLabel">—</b></div><div><span>Coastal proximity</span><div class="risk-bar"><i id="coastRiskBar"></i></div><b id="coastRiskLabel">—</b></div></div><p class="impact-note" id="impactReason">Impact estimates update from the selected observation and forecast.</p></article>
     <article class="panel sources-panel"><div class="section-head"><div><div class="eyebrow">Input coverage</div><h2>Data sources</h2></div><span class="model-tag">Simulation data</span></div><div class="source-list" id="sourceList"><div class="empty-row">Loading source status…</div></div></article>
-    <article class="panel pipeline-panel"><div class="section-head"><div><div class="eyebrow">Processing chain</div><h2>AI workflow</h2></div><span class="pipeline-status">Frame synchronized</span></div><ol class="pipeline" id="pipeline"><li class="complete">Satellite input</li><li class="complete">Preprocessing</li><li class="complete">Cyclone detection</li><li class="complete">Pattern classification</li><li class="complete">Track analysis</li><li class="active">Forecast &amp; GIS</li><li>Impact summary</li></ol></article>
   </section>
-  <footer><span>SIH 2026 <b>·</b> Problem statement 26070</span><span>Generated observations and model estimates for research demonstration</span><span>Local Leaflet GIS</span></footer>
   <div class="toast" id="toast" role="status"></div>
 </main>
 <script type="module" src="./src/main.js?v=20260930-2"></script>
