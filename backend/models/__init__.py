@@ -1,0 +1,1 @@
+"""Replaceable prototype model abstractions."""

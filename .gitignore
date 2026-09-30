@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.edge-profile/
+.edge-test/
+.browser-preview.png

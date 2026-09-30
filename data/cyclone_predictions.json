@@ -1,0 +1,242 @@
+{
+  "CYCLONE-001": {
+    "current_position": {
+      "latitude": 16.198,
+      "longitude": 86.717
+    },
+    "predicted_path": [
+      {
+        "hours": 6,
+        "timestamp": "2026-09-30T00:00:00Z",
+        "latitude": 16.666,
+        "longitude": 86.533,
+        "wind_speed": 111.3,
+        "central_pressure": 944.7,
+        "intensity_class": "Severe Cyclonic Storm",
+        "confidence": 0.9
+      },
+      {
+        "hours": 12,
+        "timestamp": "2026-09-30T06:00:00Z",
+        "latitude": 17.15,
+        "longitude": 86.341,
+        "wind_speed": 118.1,
+        "central_pressure": 937.7,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.86
+      },
+      {
+        "hours": 24,
+        "timestamp": "2026-09-30T18:00:00Z",
+        "latitude": 18.166,
+        "longitude": 85.933,
+        "wind_speed": 131.7,
+        "central_pressure": 923.7,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.78
+      },
+      {
+        "hours": 48,
+        "timestamp": "2026-10-01T18:00:00Z",
+        "latitude": 20.39,
+        "longitude": 85.021,
+        "wind_speed": 130.7,
+        "central_pressure": 923.7,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.61
+      }
+    ]
+  },
+  "CYCLONE-002": {
+    "current_position": {
+      "latitude": 18.638,
+      "longitude": 67.205
+    },
+    "predicted_path": [
+      {
+        "hours": 6,
+        "timestamp": "2026-09-30T00:00:00Z",
+        "latitude": 18.826,
+        "longitude": 66.731,
+        "wind_speed": 139.7,
+        "central_pressure": 944.9,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.9
+      },
+      {
+        "hours": 12,
+        "timestamp": "2026-09-30T06:00:00Z",
+        "latitude": 19.03,
+        "longitude": 66.249,
+        "wind_speed": 144.3,
+        "central_pressure": 940.1,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.86
+      },
+      {
+        "hours": 24,
+        "timestamp": "2026-09-30T18:00:00Z",
+        "latitude": 19.486,
+        "longitude": 65.261,
+        "wind_speed": 153.5,
+        "central_pressure": 930.6,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.78
+      },
+      {
+        "hours": 48,
+        "timestamp": "2026-10-01T18:00:00Z",
+        "latitude": 20.59,
+        "longitude": 63.189,
+        "wind_speed": 152.5,
+        "central_pressure": 930.6,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.61
+      }
+    ]
+  },
+  "CYCLONE-003": {
+    "current_position": {
+      "latitude": 14.578,
+      "longitude": 84.848
+    },
+    "predicted_path": [
+      {
+        "hours": 6,
+        "timestamp": "2026-09-30T00:00:00Z",
+        "latitude": 14.926,
+        "longitude": 84.734,
+        "wind_speed": 155.3,
+        "central_pressure": 940.8,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.9
+      },
+      {
+        "hours": 12,
+        "timestamp": "2026-09-30T06:00:00Z",
+        "latitude": 15.29,
+        "longitude": 84.612,
+        "wind_speed": 157.1,
+        "central_pressure": 939.0,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.86
+      },
+      {
+        "hours": 24,
+        "timestamp": "2026-09-30T18:00:00Z",
+        "latitude": 16.066,
+        "longitude": 84.344,
+        "wind_speed": 160.7,
+        "central_pressure": 935.3,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.78
+      },
+      {
+        "hours": 48,
+        "timestamp": "2026-10-01T18:00:00Z",
+        "latitude": 17.81,
+        "longitude": 83.712,
+        "wind_speed": 159.7,
+        "central_pressure": 935.3,
+        "intensity_class": "Very Severe Cyclonic Storm",
+        "confidence": 0.61
+      }
+    ]
+  },
+  "CYCLONE-004": {
+    "current_position": {
+      "latitude": 21.52,
+      "longitude": 65.924
+    },
+    "predicted_path": [
+      {
+        "hours": 6,
+        "timestamp": "2026-09-30T00:00:00Z",
+        "latitude": 21.728,
+        "longitude": 65.62,
+        "wind_speed": 102.5,
+        "central_pressure": 965.3,
+        "intensity_class": "Severe Cyclonic Storm",
+        "confidence": 0.9
+      },
+      {
+        "hours": 12,
+        "timestamp": "2026-09-30T06:00:00Z",
+        "latitude": 21.952,
+        "longitude": 65.308,
+        "wind_speed": 105.7,
+        "central_pressure": 962.0,
+        "intensity_class": "Severe Cyclonic Storm",
+        "confidence": 0.86
+      },
+      {
+        "hours": 24,
+        "timestamp": "2026-09-30T18:00:00Z",
+        "latitude": 22.448,
+        "longitude": 64.66,
+        "wind_speed": 112.1,
+        "central_pressure": 955.4,
+        "intensity_class": "Severe Cyclonic Storm",
+        "confidence": 0.78
+      },
+      {
+        "hours": 48,
+        "timestamp": "2026-10-01T18:00:00Z",
+        "latitude": 23.632,
+        "longitude": 63.268,
+        "wind_speed": 111.1,
+        "central_pressure": 955.4,
+        "intensity_class": "Severe Cyclonic Storm",
+        "confidence": 0.61
+      }
+    ]
+  },
+  "CYCLONE-005": {
+    "current_position": {
+      "latitude": 10.544,
+      "longitude": 82.079
+    },
+    "predicted_path": [
+      {
+        "hours": 6,
+        "timestamp": "2026-09-30T00:00:00Z",
+        "latitude": 10.712,
+        "longitude": 81.685,
+        "wind_speed": 85.7,
+        "central_pressure": 963.6,
+        "intensity_class": "Cyclonic Storm",
+        "confidence": 0.9
+      },
+      {
+        "hours": 12,
+        "timestamp": "2026-09-30T06:00:00Z",
+        "latitude": 10.896,
+        "longitude": 81.283,
+        "wind_speed": 90.8,
+        "central_pressure": 958.4,
+        "intensity_class": "Severe Cyclonic Storm",
+        "confidence": 0.86
+      },
+      {
+        "hours": 24,
+        "timestamp": "2026-09-30T18:00:00Z",
+        "latitude": 11.312,
+        "longitude": 80.455,
+        "wind_speed": 101.0,
+        "central_pressure": 947.9,
+        "intensity_class": "Severe Cyclonic Storm",
+        "confidence": 0.78
+      },
+      {
+        "hours": 48,
+        "timestamp": "2026-10-01T18:00:00Z",
+        "latitude": 12.336,
+        "longitude": 78.703,
+        "wind_speed": 100.0,
+        "central_pressure": 947.9,
+        "intensity_class": "Severe Cyclonic Storm",
+        "confidence": 0.61
+      }
+    ]
+  }
+}

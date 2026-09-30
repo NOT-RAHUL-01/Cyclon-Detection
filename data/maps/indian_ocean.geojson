@@ -1,0 +1,10 @@
+{"type":"FeatureCollection","name":"Offline simplified Indian Ocean coastlines","features":[
+ {"type":"Feature","properties":{"name":"Arabian Peninsula","kind":"land"},"geometry":{"type":"Polygon","coordinates":[[[43,30],[48,29],[52,26],[56,24],[59,21],[57,17],[53,15],[50,12],[47,13],[44,17],[42,22],[43,30]]]}},
+ {"type":"Feature","properties":{"name":"Indian Subcontinent","kind":"land"},"geometry":{"type":"Polygon","coordinates":[[[68,24],[69,22],[68,20],[70,18],[72,16],[73,13],[76,8],[78,8],[80,11],[81,14],[83,17],[87,20],[89,22],[91,22],[92,25],[90,27],[87,27],[84,26],[81,25],[77,28],[73,30],[69,28],[68,24]]]}},
+ {"type":"Feature","properties":{"name":"Myanmar and Southeast Asia","kind":"land"},"geometry":{"type":"Polygon","coordinates":[[[92,27],[96,26],[98,22],[98,18],[100,15],[101,12],[104,11],[105,8],[103,7],[100,10],[98,14],[96,17],[94,21],[92,27]]]}},
+ {"type":"Feature","properties":{"name":"Sri Lanka","kind":"land"},"geometry":{"type":"Polygon","coordinates":[[[79.6,9.9],[80.7,9.5],[81.0,8.2],[80.4,6.0],[79.8,6.0],[79.3,7.5],[79.6,9.9]]]}},
+ {"type":"Feature","properties":{"name":"Andaman and Nicobar Islands","kind":"land"},"geometry":{"type":"MultiPoint","coordinates":[[92.7,13.2],[92.8,11.5],[93.0,9.0],[92.8,7.0]]}},
+ {"type":"Feature","properties":{"name":"Somali Coast","kind":"land"},"geometry":{"type":"Polygon","coordinates":[[[43,12],[46,11],[49,8],[51,4],[50,0],[47,-2],[44,2],[42,7],[43,12]]]}},
+ {"type":"Feature","properties":{"name":"Sumatra","kind":"land"},"geometry":{"type":"Polygon","coordinates":[[[95,5],[98,4],[101,1],[104,-3],[105,-5],[103,-6],[100,-3],[98,0],[96,3],[95,5]]]}},
+ {"type":"Feature","properties":{"name":"Maldives","kind":"land"},"geometry":{"type":"MultiPoint","coordinates":[[73.5,7],[73.4,4],[73.2,1],[73,-2],[72.9,-4]]}}
+]}

@@ -1,0 +1,41 @@
+cyclone_id,timestamp,image_path,latitude,longitude,wind_speed,central_pressure,temperature,humidity,sea_surface_temperature,cloud_top_temperature,rainfall,movement_speed,movement_direction,intensity_class
+CYCLONE-001,2026-09-28T00:00:00Z,data/cyclone_images/cyclone_001_t00.png,13.0,88.025,58.0,1001.4,27.6,76.0,29.1,-52.4,18.0,18.4,NNW,Tropical Storm
+CYCLONE-001,2026-09-28T06:00:00Z,data/cyclone_images/cyclone_001_t06.png,13.474,87.842,66.1,994.0,27.6,76.7,29.1,-54.7,20.4,18.7,NNW,Cyclonic Storm
+CYCLONE-001,2026-09-28T12:00:00Z,data/cyclone_images/cyclone_001_t12.png,13.943,87.654,73.4,986.1,27.5,77.3,29.0,-56.8,22.8,18.9,NNW,Cyclonic Storm
+CYCLONE-001,2026-09-28T18:00:00Z,data/cyclone_images/cyclone_001_t18.png,14.404,87.462,79.6,978.1,27.5,78.0,29.0,-58.7,25.2,19.1,NNW,Cyclonic Storm
+CYCLONE-001,2026-09-29T00:00:00Z,data/cyclone_images/cyclone_001_t24.png,14.857,87.27,85.1,970.6,27.4,78.6,29.0,-60.5,27.6,19.1,NNW,Cyclonic Storm
+CYCLONE-001,2026-09-29T06:00:00Z,data/cyclone_images/cyclone_001_t30.png,15.304,87.08,90.6,963.8,27.4,79.2,28.9,-62.3,30.0,19.0,NNW,Severe Cyclonic Storm
+CYCLONE-001,2026-09-29T12:00:00Z,data/cyclone_images/cyclone_001_t36.png,15.749,86.895,97.0,957.7,27.4,79.9,28.9,-64.3,32.4,18.9,NNW,Severe Cyclonic Storm
+CYCLONE-001,2026-09-29T18:00:00Z,data/cyclone_images/cyclone_001_t42.png,16.198,86.717,104.5,951.7,27.3,80.5,28.9,-66.4,34.8,18.6,NNW,Severe Cyclonic Storm
+CYCLONE-002,2026-09-28T00:00:00Z,data/cyclone_images/cyclone_002_t00.png,17.421,70.514,104.0,983.4,26.9,83.0,28.4,-60.7,32.0,22.1,WNW,Severe Cyclonic Storm
+CYCLONE-002,2026-09-28T06:00:00Z,data/cyclone_images/cyclone_002_t06.png,17.605,70.032,109.9,978.3,26.9,83.7,28.4,-62.6,34.4,22.4,WNW,Severe Cyclonic Storm
+CYCLONE-002,2026-09-28T12:00:00Z,data/cyclone_images/cyclone_002_t12.png,17.78,69.55,115.0,972.6,26.8,84.3,28.3,-64.3,36.8,22.6,WNW,Severe Cyclonic Storm
+CYCLONE-002,2026-09-28T18:00:00Z,data/cyclone_images/cyclone_002_t18.png,17.948,69.07,119.0,966.9,26.8,85.0,28.3,-65.8,39.2,22.8,WNW,Very Severe Cyclonic Storm
+CYCLONE-002,2026-09-29T00:00:00Z,data/cyclone_images/cyclone_002_t24.png,18.114,68.595,122.3,961.7,26.7,85.6,28.3,-67.2,41.6,22.8,WNW,Very Severe Cyclonic Storm
+CYCLONE-002,2026-09-29T06:00:00Z,data/cyclone_images/cyclone_002_t30.png,18.281,68.127,125.6,957.2,26.7,86.2,28.2,-68.6,44.0,22.7,WNW,Very Severe Cyclonic Storm
+CYCLONE-002,2026-09-29T12:00:00Z,data/cyclone_images/cyclone_002_t36.png,18.455,67.664,129.8,953.3,26.7,86.9,28.2,-70.2,46.4,22.6,WNW,Very Severe Cyclonic Storm
+CYCLONE-002,2026-09-29T18:00:00Z,data/cyclone_images/cyclone_002_t42.png,18.638,67.205,135.1,949.6,26.6,87.5,28.2,-71.9,48.8,22.3,WNW,Very Severe Cyclonic Storm
+CYCLONE-003,2026-09-28T00:00:00Z,data/cyclone_images/cyclone_003_t00.png,12.223,85.59,142.0,956.4,27.1,89.0,29.4,-67.6,54.0,14.7,NNW,Very Severe Cyclonic Storm
+CYCLONE-003,2026-09-28T06:00:00Z,data/cyclone_images/cyclone_003_t06.png,12.553,85.47,145.1,954.2,27.1,89.7,29.4,-68.9,56.4,15.0,NNW,Very Severe Cyclonic Storm
+CYCLONE-003,2026-09-28T12:00:00Z,data/cyclone_images/cyclone_003_t12.png,12.879,85.355,147.4,951.4,27.0,90.3,29.3,-70.1,58.8,15.2,NNW,Very Severe Cyclonic Storm
+CYCLONE-003,2026-09-28T18:00:00Z,data/cyclone_images/cyclone_003_t18.png,13.205,85.247,148.6,948.6,27.0,91.0,29.3,-71.1,61.2,15.4,NNW,Very Severe Cyclonic Storm
+CYCLONE-003,2026-09-29T00:00:00Z,data/cyclone_images/cyclone_003_t24.png,13.536,85.144,149.1,946.2,26.9,91.6,29.3,-72.0,63.6,15.4,NNW,Very Severe Cyclonic Storm
+CYCLONE-003,2026-09-29T06:00:00Z,data/cyclone_images/cyclone_003_t30.png,13.876,85.045,149.6,944.6,26.9,92.2,29.2,-72.9,66.0,15.3,NNW,Very Severe Cyclonic Storm
+CYCLONE-003,2026-09-29T12:00:00Z,data/cyclone_images/cyclone_003_t36.png,14.224,84.947,151.0,943.6,26.9,92.9,29.2,-74.0,68.4,15.2,NNW,Very Severe Cyclonic Storm
+CYCLONE-003,2026-09-29T18:00:00Z,data/cyclone_images/cyclone_003_t42.png,14.578,84.848,153.5,942.7,26.8,93.5,29.2,-75.2,70.8,14.9,NNW,Very Severe Cyclonic Storm
+CYCLONE-004,2026-09-28T00:00:00Z,data/cyclone_images/cyclone_004_t00.png,20.104,67.975,78.0,992.4,27.3,81.0,28.7,-56.0,25.0,16.3,WNW,Cyclonic Storm
+CYCLONE-004,2026-09-28T06:00:00Z,data/cyclone_images/cyclone_004_t06.png,20.289,67.677,82.5,988.7,27.3,81.7,28.7,-57.6,27.4,16.6,WNW,Cyclonic Storm
+CYCLONE-004,2026-09-28T12:00:00Z,data/cyclone_images/cyclone_004_t12.png,20.478,67.384,86.2,984.5,27.2,82.3,28.6,-59.1,29.8,16.8,WNW,Cyclonic Storm
+CYCLONE-004,2026-09-28T18:00:00Z,data/cyclone_images/cyclone_004_t18.png,20.675,67.095,88.8,980.2,27.2,83.0,28.6,-60.4,32.2,17.0,WNW,Severe Cyclonic Storm
+CYCLONE-004,2026-09-29T00:00:00Z,data/cyclone_images/cyclone_004_t24.png,20.881,66.807,90.7,976.4,27.1,83.6,28.6,-61.5,34.6,17.0,WNW,Severe Cyclonic Storm
+CYCLONE-004,2026-09-29T06:00:00Z,data/cyclone_images/cyclone_004_t30.png,21.093,66.518,92.6,973.4,27.1,84.2,28.5,-62.7,37.0,16.9,WNW,Severe Cyclonic Storm
+CYCLONE-004,2026-09-29T12:00:00Z,data/cyclone_images/cyclone_004_t36.png,21.308,66.224,95.4,970.9,27.1,84.9,28.5,-64.0,39.4,16.8,WNW,Severe Cyclonic Storm
+CYCLONE-004,2026-09-29T18:00:00Z,data/cyclone_images/cyclone_004_t42.png,21.52,65.924,99.3,968.6,27.0,85.5,28.5,-65.5,41.8,16.5,WNW,Severe Cyclonic Storm
+CYCLONE-005,2026-09-28T00:00:00Z,data/cyclone_images/cyclone_005_t00.png,9.381,84.784,46.0,1006.4,28.0,73.0,29.7,-50.3,14.0,20.6,WNW,Deep Depression
+CYCLONE-005,2026-09-28T06:00:00Z,data/cyclone_images/cyclone_005_t06.png,9.535,84.405,52.4,1000.8,28.0,73.7,29.7,-52.2,16.4,20.9,WNW,Tropical Storm
+CYCLONE-005,2026-09-28T12:00:00Z,data/cyclone_images/cyclone_005_t12.png,9.698,84.027,58.0,994.6,27.9,74.3,29.6,-54.0,18.8,21.1,WNW,Tropical Storm
+CYCLONE-005,2026-09-28T18:00:00Z,data/cyclone_images/cyclone_005_t18.png,9.868,83.648,62.5,988.4,27.9,75.0,29.6,-55.6,21.2,21.3,WNW,Cyclonic Storm
+CYCLONE-005,2026-09-29T00:00:00Z,data/cyclone_images/cyclone_005_t24.png,10.043,83.264,66.3,982.6,27.8,75.6,29.6,-57.1,23.6,21.3,WNW,Cyclonic Storm
+CYCLONE-005,2026-09-29T06:00:00Z,data/cyclone_images/cyclone_005_t30.png,10.216,82.874,70.1,977.6,27.8,76.2,29.5,-58.6,26.0,21.2,WNW,Cyclonic Storm
+CYCLONE-005,2026-09-29T12:00:00Z,data/cyclone_images/cyclone_005_t36.png,10.384,82.479,74.8,973.2,27.8,76.9,29.5,-60.3,28.4,21.1,WNW,Cyclonic Storm
+CYCLONE-005,2026-09-29T18:00:00Z,data/cyclone_images/cyclone_005_t42.png,10.544,82.079,80.6,968.9,27.7,77.5,29.5,-62.1,30.8,20.8,WNW,Cyclonic Storm

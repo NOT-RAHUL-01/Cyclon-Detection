@@ -1,0 +1,292 @@
+{
+  "CYCLONE-001": [
+    {
+      "timestamp": "2026-09-28T00:00:00Z",
+      "latitude": 13.0,
+      "longitude": 88.025,
+      "wind_speed": 58.0,
+      "intensity": "Tropical Storm"
+    },
+    {
+      "timestamp": "2026-09-28T06:00:00Z",
+      "latitude": 13.474,
+      "longitude": 87.842,
+      "wind_speed": 66.1,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T12:00:00Z",
+      "latitude": 13.943,
+      "longitude": 87.654,
+      "wind_speed": 73.4,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T18:00:00Z",
+      "latitude": 14.404,
+      "longitude": 87.462,
+      "wind_speed": 79.6,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T00:00:00Z",
+      "latitude": 14.857,
+      "longitude": 87.27,
+      "wind_speed": 85.1,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T06:00:00Z",
+      "latitude": 15.304,
+      "longitude": 87.08,
+      "wind_speed": 90.6,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T12:00:00Z",
+      "latitude": 15.749,
+      "longitude": 86.895,
+      "wind_speed": 97.0,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T18:00:00Z",
+      "latitude": 16.198,
+      "longitude": 86.717,
+      "wind_speed": 104.5,
+      "intensity": "Severe Cyclonic Storm"
+    }
+  ],
+  "CYCLONE-002": [
+    {
+      "timestamp": "2026-09-28T00:00:00Z",
+      "latitude": 17.421,
+      "longitude": 70.514,
+      "wind_speed": 104.0,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T06:00:00Z",
+      "latitude": 17.605,
+      "longitude": 70.032,
+      "wind_speed": 109.9,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T12:00:00Z",
+      "latitude": 17.78,
+      "longitude": 69.55,
+      "wind_speed": 115.0,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T18:00:00Z",
+      "latitude": 17.948,
+      "longitude": 69.07,
+      "wind_speed": 119.0,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T00:00:00Z",
+      "latitude": 18.114,
+      "longitude": 68.595,
+      "wind_speed": 122.3,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T06:00:00Z",
+      "latitude": 18.281,
+      "longitude": 68.127,
+      "wind_speed": 125.6,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T12:00:00Z",
+      "latitude": 18.455,
+      "longitude": 67.664,
+      "wind_speed": 129.8,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T18:00:00Z",
+      "latitude": 18.638,
+      "longitude": 67.205,
+      "wind_speed": 135.1,
+      "intensity": "Very Severe Cyclonic Storm"
+    }
+  ],
+  "CYCLONE-003": [
+    {
+      "timestamp": "2026-09-28T00:00:00Z",
+      "latitude": 12.223,
+      "longitude": 85.59,
+      "wind_speed": 142.0,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T06:00:00Z",
+      "latitude": 12.553,
+      "longitude": 85.47,
+      "wind_speed": 145.1,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T12:00:00Z",
+      "latitude": 12.879,
+      "longitude": 85.355,
+      "wind_speed": 147.4,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T18:00:00Z",
+      "latitude": 13.205,
+      "longitude": 85.247,
+      "wind_speed": 148.6,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T00:00:00Z",
+      "latitude": 13.536,
+      "longitude": 85.144,
+      "wind_speed": 149.1,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T06:00:00Z",
+      "latitude": 13.876,
+      "longitude": 85.045,
+      "wind_speed": 149.6,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T12:00:00Z",
+      "latitude": 14.224,
+      "longitude": 84.947,
+      "wind_speed": 151.0,
+      "intensity": "Very Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T18:00:00Z",
+      "latitude": 14.578,
+      "longitude": 84.848,
+      "wind_speed": 153.5,
+      "intensity": "Very Severe Cyclonic Storm"
+    }
+  ],
+  "CYCLONE-004": [
+    {
+      "timestamp": "2026-09-28T00:00:00Z",
+      "latitude": 20.104,
+      "longitude": 67.975,
+      "wind_speed": 78.0,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T06:00:00Z",
+      "latitude": 20.289,
+      "longitude": 67.677,
+      "wind_speed": 82.5,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T12:00:00Z",
+      "latitude": 20.478,
+      "longitude": 67.384,
+      "wind_speed": 86.2,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-28T18:00:00Z",
+      "latitude": 20.675,
+      "longitude": 67.095,
+      "wind_speed": 88.8,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T00:00:00Z",
+      "latitude": 20.881,
+      "longitude": 66.807,
+      "wind_speed": 90.7,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T06:00:00Z",
+      "latitude": 21.093,
+      "longitude": 66.518,
+      "wind_speed": 92.6,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T12:00:00Z",
+      "latitude": 21.308,
+      "longitude": 66.224,
+      "wind_speed": 95.4,
+      "intensity": "Severe Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T18:00:00Z",
+      "latitude": 21.52,
+      "longitude": 65.924,
+      "wind_speed": 99.3,
+      "intensity": "Severe Cyclonic Storm"
+    }
+  ],
+  "CYCLONE-005": [
+    {
+      "timestamp": "2026-09-28T00:00:00Z",
+      "latitude": 9.381,
+      "longitude": 84.784,
+      "wind_speed": 46.0,
+      "intensity": "Deep Depression"
+    },
+    {
+      "timestamp": "2026-09-28T06:00:00Z",
+      "latitude": 9.535,
+      "longitude": 84.405,
+      "wind_speed": 52.4,
+      "intensity": "Tropical Storm"
+    },
+    {
+      "timestamp": "2026-09-28T12:00:00Z",
+      "latitude": 9.698,
+      "longitude": 84.027,
+      "wind_speed": 58.0,
+      "intensity": "Tropical Storm"
+    },
+    {
+      "timestamp": "2026-09-28T18:00:00Z",
+      "latitude": 9.868,
+      "longitude": 83.648,
+      "wind_speed": 62.5,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T00:00:00Z",
+      "latitude": 10.043,
+      "longitude": 83.264,
+      "wind_speed": 66.3,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T06:00:00Z",
+      "latitude": 10.216,
+      "longitude": 82.874,
+      "wind_speed": 70.1,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T12:00:00Z",
+      "latitude": 10.384,
+      "longitude": 82.479,
+      "wind_speed": 74.8,
+      "intensity": "Cyclonic Storm"
+    },
+    {
+      "timestamp": "2026-09-29T18:00:00Z",
+      "latitude": 10.544,
+      "longitude": 82.079,
+      "wind_speed": 80.6,
+      "intensity": "Cyclonic Storm"
+    }
+  ]
+}
